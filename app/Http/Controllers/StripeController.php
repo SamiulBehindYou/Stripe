@@ -19,6 +19,9 @@ class StripeController extends Controller
         'source' => $request->stripeToken,
         'description' => 'Payment for order #1234',
         ]);
-        dd($request->all(), $charge);
+        
+        toastr()->success('Payment successfully done!.');
+        return back();
+        // dd($request->all(), $charge);
     }
 }
