@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/stripe', function () {
-    return view('stripe');
-});
+Route::get('/', [StripeController::class, 'index'])->name('stripe.index');
+Route::post('/stripe/charge', [StripeController::class, 'charge'])->name('stripe.charge');
