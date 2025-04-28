@@ -6,14 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stripe extends Model
 {
-    protected $fillable = [
-        'name',
-        'email',
-        'amount',
-        'currency',
-        'description',
-        'stripe_token',
-    ];
+    protected $guarded = ['id'];
 
     public function getStripeTokenAttribute($value)
     {

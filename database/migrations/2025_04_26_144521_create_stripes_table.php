@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('stripes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
+            $table->longText('payment_id');
+            $table->string('payment_status')->default('pending');
             $table->string('amount');
             $table->string('currency');
-            $table->string('description');
-            $table->string('stripe_token');
+            $table->longText('description');
+            $table->longText('stripe_token');
             $table->timestamps();
         });
     }
